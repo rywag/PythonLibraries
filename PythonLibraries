@@ -1,0 +1,97 @@
+#!/bin/bash
+# I wrote each python library installation in their own line so you can comment out
+# any library you may not want. To comment it out just put a hashtag at the start of the
+# line containing the library you don't want
+# to install all python libraries for astronomy majors checkout my other repos
+# on my github  https://github.com/rywag
+# You are required to type chmod +X PythonLibraries before it will run
+printf "Do you have pip installed already"$USER" y/n? (if you don't know type n to make sure it is)"
+read ispipinstalled
+
+if [ "$ispipinstalled" == "n" ]
+
+then 
+    easy_install pip
+
+elif [ "$ispipinstalled" == "y" ]
+
+then
+    printf "Perfect, thank you!\n"
+else
+    printf "not a valid command, hopefully it was supposed to be a y \n because I'm skipping the pip installation now."
+fi
+
+printf "These are thought to be essential python libraries that don't usually come pre-installed\n"
+printf "are you sure you want to install these python libraries "$USER"? y/n: \n"
+read installationoflibraries
+
+if [ "$installationoflibraries" == "y" ]
+
+then 
+    pip install QtPy 
+    pip install requests 
+    pip install scrapyd 
+    pip install wxpython 
+    pip install pillow
+    pip install sqlalchemy
+    pip install BeautifulSoup
+    pip install Twisted
+    pip install numpy
+    pip install scipy
+    pip install matplotlib
+    pip install Pygame
+    pip install PyQt4
+    pip install PyQt5
+    pip install PyQt3D
+    pip install qtalchemy
+    pip install Qt.py
+    pip install pyglet
+    pip install scapy
+    pip install nltk
+    pip install nose
+    pip install ipython
+    pip install sympy
+    pip install kivy
+    pip install virtualenv
+    pip install fabric
+    pip install scipy
+    pip install pyquery
+    pip install dateutils
+    pip install py-amqplib
+    pip install path.py
+    pip install libgmail
+    pip install setuptools
+    pip install Sphinx
+    pip install Cython
+    pip install Plone
+    pip install umemcached
+    pip install sh
+    pip install tweepy tweetstreamer tweepy-utils
+    pip install raven
+    pip install nltk
+    pip install pymongo
+    pip install django django-connect django-consent
+    pip install django-tastypie django-rest-framework django-haystack 
+    pip install django-debug-toolbar django-piston piston
+    pip install boto django-boto
+    
+else
+    printf "Just doing the updates I see, good thinking!\n"
+fi
+
+printf "Would you like to update all your python libraries? y/n \n"
+read updateAll
+
+if [ "$updateAll" == "y" ]
+
+then
+    pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+
+else
+    printf "Not sure why you passed that up "$USER", but sometimes everything is up to date and I totally get that."
+
+fi
+
+printf "Thank you "$USER" for using this file, hope this has been helpful \n"
+printf "Have a nice day!"
+printf "Share and rate on github if this was helpful, thank you again "$USER".\n"

@@ -1,0 +1,149 @@
+#!/bin/bash
+# I wrote each python library installation in their own line so you can comment out
+# any library you may not want. To comment it out just put a hashtag at the start of the
+# line containing the library you don't want to see what they do type "pip
+# to install other python libraries that aren't preinstalled checkout my other repos
+# on github  https://github.com/rywag
+# You are required to type chmod +X AstroLibraries before it will run
+
+printf "Is pip installed "$USER" y/n? \n"
+read pipans
+
+if [ "$pipans" == "n" ]
+
+then
+    easy_install pip
+
+elif [ "$pipans" == "y" ]
+
+then
+    printf "AWESOME "$USER"! Makes things a little faster! \n"
+    
+else
+    printf "Skipping pip installation. \n"
+fi
+
+printf "essential python libraries that don't usually come pre-installed for astronomy \n"
+printf "are you sure you want to install these python libraries? y/n:"
+read ans
+
+if [ "$ans" == "y" ]
+
+then 
+    pip install pyfits
+    pip install astropy
+    pip install wxPython
+    pip install psutil
+    pip install astropy-helpers
+    pip install numpy
+    pip install matplotlib
+    pip install fitsio
+    pip install astro-tigger
+    pip install astropyp
+    pip install astLib
+    pip install ztv
+    pip install SRPAstro
+    pip install PyAstronomy
+    pip install pyastro
+    pip install gary
+    pip install gammapy
+    pip install astroalign
+    pip install APLpy
+    pip install wcsaxes
+    pip install sinistra
+    pip install pandas
+    pip install QualiPy
+    pip install asciitable
+    pip install astLib
+    pip install astroML astroML_addons
+    pip install astrolib.coords
+    pip install astroplan
+    pip install astropysics
+    pip install astroquery
+    pip install ATpy
+    pip install ChiantiPy
+    pip install cosmocalc
+    pip install emcee
+    pip install esutil
+    pip install fortranfile irpf90
+    pip install gammapy
+    pip install ginga
+    pip install gwcs
+    pip install halotools
+    pip install IDLSave
+    pip install imexam
+    pip install isochrones
+    pip install kapteyn
+    pip install lineid_plot
+    pip install mayavi
+    pip install mirpy
+    pip install naima
+    pip install Pandora pydora
+    pip install photutils
+    pip install plotly
+    pip install poppy
+    pip install pyast
+    pip install pyds9
+    pip install pyephem
+    pip install pyflation
+    pip install pyIDL pyidlrpc
+    pip install pynbody
+    pip install pyradex
+    pip install pyraf
+    pip install pyregion
+    pip install pysofa
+    pip install pyspeckit
+    pip install pysynphot
+    pip install PyTPM pytpmutils
+    pip install pyvo
+    pip install pywcs pywcsgrid2
+    pip install rpy rpy2
+    pip install sampy
+    pip install scipy scipyplot 
+    pip install FITS_tools
+    pip install mathstats
+    pip install sersic
+    pip install sherpa
+    pip install sncosmo
+    pip install SpacePy
+    pip install sphere
+    pip install pysptools
+    pip install stscipython stsci.tools stsci.numdisplay stsci.ndimage stsci.disutils
+    pip install sunpy
+    pip install pyvo 
+    pip install voevent-parse
+    pip install vpython vpnotebook
+    pip install webbpsf
+    pip install yt
+
+elif [ "$ans" == "n" ]
+
+then
+    printf "Running for the update only then? \n"
+    
+else 
+    printf "I can't do that "$USER" maybe next time. \n"
+    
+fi
+
+printf "Would you like to update all your python libraries "$USER"? y/n \n"
+read update
+
+if [ "$update" == "y" ]
+
+then
+    pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U
+
+
+fi
+
+if [ "$update" == "n" ]
+
+then 
+    printf "You are on the ball having everything all updated! \n Good for you "$USER"!!\n"
+
+fi
+
+printf "Thank you for using this file"$USER", I hope this has been helpful.\n"
+printf "Share and rate on github if this was helpful \n"
+printf "Have a nice day"$USER"!"
